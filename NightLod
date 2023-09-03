@@ -40,7 +40,7 @@ Tab:AddButton({
   	end    
 })
 
-_G.Key = "uhlqke2352qjb", "pihl523jbkqfe", "837uqhjndbih", "uiqeghkjv784y", "qpolejkwv435"
+_G.Key = "kZWlnafbPWX2qKDmSKlCIEJNQ"
 _G.KeyInput = "string"
 
 function Destroy()
