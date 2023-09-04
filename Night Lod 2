@@ -5410,7 +5410,7 @@ local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171
             Name = "Auto Elite[HOP]",
             Default = false,
             Callback = function(Value)
-                _G.AutoEliteHunterHop = Value
+                _G.Hop = Value
             end    
         })
 
@@ -5491,7 +5491,7 @@ local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171
             Name = "Automatically hit the dummy[HOP]",
             Default = false,
             Callback = function(Value)
-                _G.AutoArenaTrainerHop = Value
+                _G.Hop = Value
             end    
         })
 
@@ -5514,7 +5514,7 @@ local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171
             Name = "Auto Hallow Scythe[HOP]",
             Default = false,
             Callback = function(Value)
-                _G.AutoFarmBossHallowHop = Value
+                _G.Hop = Value
             end    
         })
         spawn(function()
@@ -5607,7 +5607,7 @@ local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171
             Name = "Auto Dark Dragger[HOP]",
             Default = false,
             Callback = function(Value)
-                _G.AutoDarkDagger_Hop = Value
+                _G.Hop = Value
             end    
         })
 
