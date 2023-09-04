@@ -4423,7 +4423,7 @@ IQ:AddToggle({
 	Name = "Auto Buddy Sword[HOP]",
 	Default = false,
 	Callback = function(Value)
-		_G.AutoBudySwordHop = Value
+		_G.Hop = Value
 	end    
 })
 
@@ -4610,7 +4610,7 @@ IQ:AddToggle({
 	Name = "Auto Soul Guita[HOP]",
 	Default = false,
 	Callback = function(Value)
-		_G.soulGuitarhop = Value    
+		_G.Hop = Value  
 	end    
 })
 
@@ -5077,7 +5077,7 @@ IQ:AddToggle({
 	Name = "Auto Tushita[HOP]",
 	Default = false,
 	Callback = function(Value)
-		_G.Autotushitahop = Value
+		_G.Hop = Value
     end  
 })
 
@@ -5145,7 +5145,7 @@ IQ:AddToggle({
 	Name = "Auto Cavander[HOP]",
 	Default = false,
 	Callback = function(Value)
-		_G.AutoCarvenderhop = Value
+		_G.Hop = Value
 	end    
 })
 local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171875)
@@ -5260,7 +5260,7 @@ local CavandisPos = CFrame.new(5311.07421875, 426.0243835449219, 165.12762451171
             Name = "Auto Twin Hook[HOP]",
             Default = false,
             Callback = function(Value)
-                _G.AutoTwinHook_Hop = Value 
+                _G.Hop = Value
             end    
         })
         
