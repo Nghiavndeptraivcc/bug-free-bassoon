@@ -2932,10 +2932,10 @@ spawn(function()
 end)
 
 local AttackList = {"Super Fast Attack", "0", "0.2", "0.15", "0.155", "0.16", "0.165", "0.17", "0.175", "0.18", "0.185", "0.190", "0.195", "1", "1.5", "2"}
-_G.FastAttackDelay = "1",
+_G.FastAttackDelay = "1.5",
 M:AddDropdown({
 	Name = "FastAttack Delay",
-	Default = "1",
+	Default = "1.5",
 	Options = AttackList,
 	Callback = function(Value)
 		_G.FastAttackDelay = Value
