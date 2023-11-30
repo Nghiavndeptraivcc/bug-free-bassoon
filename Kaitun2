@@ -604,7 +604,7 @@ end)
 spawn(function()
     while true do
     if _G.AutoBounty then
-    for i,v in pairs(game:GetService("Workspace").Character:GetChildren()) do
+    for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
         if v.Name ~= game.Players.LocalPlayer.Name then
             if v.Humanoid.Health > 0 and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude <= 7000 then
                 plyselecthunthelpold = v.Humanoid.Health
