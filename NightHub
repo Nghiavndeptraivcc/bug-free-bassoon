@@ -1896,18 +1896,6 @@
         wait(.36)
     end)
 
-    ImageButton1.Parent = ScreenGui1
-    ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    ImageButton1.BorderSizePixel = 0
-    ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-    ImageButton1.Size = UDim2.new(0, 50, 0, 50)
-    ImageButton1.Draggable = true
-    ImageButton1.Image = "rbxassetid://15467813210"
-    ImageButton1.MouseButton1Down:connect(function()
-      Hop()
-    end)
-    UICorner.Parent = ImageButton1
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Night Hub Test", HidePremium = false, IntroText = "LMN GAMING", SaveConfig = true, ConfigFolder = "Night Test"})
 
