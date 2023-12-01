@@ -2389,21 +2389,25 @@ S:AddDropdown({
 	end    
 })
 
+spawn(function()
+    while wait() do
 if _G.SpeedMode == "110" then
     _G.SpeedValue = 110
 end
-elseif _G.SpeedMoode == "200" then
+if _G.SpeedMoode == "200" then
     _G.SpeedValue = 200
 end
-elseif _G.SpeedMoode == "300" then
+if _G.SpeedMoode == "300" then
     _G.SpeedValue = 300
 end
-elseif _G.SpeedMoode == "400" then
+if _G.SpeedMoode == "400" then
     _G.SpeedValue = 400
 end
-elseif _G.SpeedMoode == "500" then
+if _G.SpeedMoode == "500" then
     _G.SpeedValue = 500
 end
+end
+end)
 
 S:AddToggle({
 	Name = "Enabled Speed Boats",
