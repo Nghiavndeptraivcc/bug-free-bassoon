@@ -1913,7 +1913,7 @@
                         end
                     end)
                     repeat wait()
-                        plr.Character:SetPrimaryPartCFrame(v:FindFirstChild("VehicleSeat").CFrame * CFrame.new(0, 2, 0))
+                        plr.Character:SetPrimaryPartCFrame(v:FindFirstChild("VehicleSeat").CFrame * CFrame.new(0, 3, 0))
                     until plr.Character:FindFirstChildOfClass("Humanoid").Sit == true
                     v:FindFirstChild("VehicleSeat").MaxSpeed = _G.SpeedValue
                 end
