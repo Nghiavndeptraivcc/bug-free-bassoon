@@ -1,402 +1,366 @@
-------Config------------------
-_G.configenabled = true
-if _G.configenabled then
-    if getgenv().config["Start Hunt"] then
-        _G.AutoBounty = true
-    end
-    if getgenv().config["Race V4"] then
-        _G.V4 = true
-    end
-    if getgenv().config["Race V3"] then
-        _G.V3 = true
-    end
-    if getgenv().config["Settings"]["Melee"]["Enabled"] then
+-----getgen().config-----------
+_G.ConfigUse = true
+if _G.ConfigUse then
+    if getgenv().config["Melee"] then
         Melee = true
     end
-    if getgenv().config["Settings"]["Melee"]["Skill Z"] then
-        SkillZMelee = true
-    end
-    if getgenv().config["Settings"]["Melee"]["Skill X"] then
-        SkillXMelee = true
-    end
-    if getgenv().config["Settings"]["Melee"]["Skill C"] then
-        SkillCMelee = true
-    end
-    if getgenv().config["Settings"]["Sword"]["Enabled"] then
+    if getgenv().config["Sword"] then
         Sword = true
     end
-    if getgenv().config["Settings"]["Sword"]["Skill Z"] then
-        SkillZSword = true
-    end
-    if getgenv().config["Settings"]["Melee"]["Skill X"] then
-        SkillXSword = true
-    end
-    if getgenv().config["Settings"]["Gun"]["Enabled"] then
+    if getgenv().config["Gun"] then
         Gun = true
     end
-    if getgenv().config["Settings"]["Gun"]["Skill Z"] then
-        SkillZGun = true
-    end
-    if getgenv().config["Settings"]["Gun"]["Skill X"] then
-        SkillXGun = true
-    end
-    if getgenv().config["Settings"]["Devil Fruit"]["Enabled"] then
+    if getgenv().config["Devil Fruit"] then
         DF = true
     end
-    if getgenv().config["Settings"]["Devil Fruit"]["Skill Z"] then
-        SkillZDF = true
-    end
-    if getgenv().config["Settings"]["Devil Fruit"]["Skill X"] then
-        SkillXDF = true
-    end
-    if getgenv().config["Settings"]["Devil Fruit"]["Skill C"] then
-        SkillCDF = true
-    end
-    if getgenv().config["Settings"]["Devil Fruit"]["Skill V"] then
-        SkillVDF = true
-    end
 end
-
-
--------Config------------
-function Y()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
-    game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
-end
-
-function Z()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
-end
-
-function X()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
-end
-
-function C()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
-end
-
-function V()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
-end
-
-    if skilluse then    
-        if SkillZMelee and SkillZMelee2 then
-            Z()
-        end
-        if SkillXMelee and SkillXMelee2 then
-            X()
-        end
-        if SkillCMelee and SkillCMelee2 then
-            C()
-        end
-        if SkillZSword and SkillZSword2 then
-            Z()
-        end
-        if SkillXSword and SkillXSword2 then
-            X()
-        end
-        if SkillZGun and SkillZGun2 then
-            Z()
-        end
-        if SkillXGun and SkillXGun2 then
-            X()
-        end
-        if SkillZDF and SkillZDF2 then
-            Z()
-        end
-        if SkillXDF and SkillXDF2 then
-            X()
-        end
-        if SkillCDF and SkillCDF2 then
-            C()
-        end
-        if SkillVDF and SkillVDF2 then
-            V()
-        end
-    end
-
------Gui------------------------------
-
-----Earned-----------
-local BountyA = game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value
-
------Gui--By--Me------------------------------------
--- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
-
+-------Cusc----------
+local osfunc = {}
+local uihide = false
+local abc = false
+local currentpage = ""
+local keybind = keybind or Enum.KeyCode.RightControl
+local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
 -- Instances:
-local NightHubAB = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local MainCorner = Instance.new("UICorner")
-local NightLogo = Instance.new("Frame")
-local NightLogoStroke = Instance.new("UIStroke")
-local NightLogoCorner = Instance.new("UICorner")
-local NightLogoImage = Instance.new("ImageLabel")
-local ClientTime = Instance.new("Frame")
-local ClientTimeStroke = Instance.new("UIStroke")
-local ClientTimeCorner = Instance.new("UICorner")
-local ClientTimeLabel_1 = Instance.new("TextLabel")
-local ClientTimeLabel_2 = Instance.new("TextLabel")
-local SkipPlayer = Instance.new("Frame")
-local SkipPlayerStroke = Instance.new("UIStroke")
-local SkipPlayerCorner = Instance.new("UICorner")
-local SkipPlayerButton = Instance.new("TextButton")
-local TargetNameEarnedTimeElapsed = Instance.new("Frame")
-local EarnedTimeElapsedStroke = Instance.new("UIStroke")
-local EarnedTimeElapsedCorner = Instance.new("UICorner")
-local EarnedLabel = Instance.new("TextLabel")
-local TimeElapsedLabel = Instance.new("TextLabel")
-local TargetNameLabel = Instance.new("TextLabel")
-local MainSection = Instance.new("Frame")
-local MainSectionCorner = Instance.new("UICorner")
-local MainSectionStroke = Instance.new("UIStroke")
-local MainSectionLabel_1 = Instance.new("TextLabel")
-local MainSectionLabel_2 = Instance.new("TextLabel")
-local MainStroke = Instance.new("UIStroke")
 
-NightHubAB.Name = "NightHubAB"
-NightHubAB.Parent = game.CoreGui
-NightHubAB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Main.Name = "Main"
-Main.Parent = NightHubAB
-Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-Main.Size = UDim2.new(0, 300, 0, 230)
-Main.Draggable = true
-
-
-MainCorner.Name = "MainCorner"
-MainCorner.Parent = Main
-
-NightLogo.Name = "NightLogo"
-NightLogo.Parent = Main
-NightLogo.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-NightLogo.BorderColor3 = Color3.fromRGB(27, 42, 53)
-NightLogo.BorderSizePixel = 0
-NightLogo.Position = UDim2.new(0.0500000007, 0, 0.0394444428, 0)
-NightLogo.Size = UDim2.new(0, 85, 0, 85)
-
-NightLogoStroke.Color = Color3.fromRGB(255, 255, 255)
-NightLogoStroke.Name = "NightLogoStroke"
-NightLogoStroke.Parent = NightLogo
-
-NightLogoCorner.Name = "NightLogoCorner"
-NightLogoCorner.Parent = NightLogo
-
-NightLogoImage.Name = "NightLogoImage"
-NightLogoImage.Parent = NightLogo
-NightLogoImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NightLogoImage.BackgroundTransparency = 1.000
-NightLogoImage.BorderColor3 = Color3.fromRGB(27, 42, 53)
-NightLogoImage.LayoutOrder = 2
-NightLogoImage.Size = UDim2.new(0, 84, 0, 85)
-NightLogoImage.Image = "rbxassetid://15467813210"
-NightLogoImage.ImageColor3 = Color3.fromRGB(1000, 1000, 1000)
-
-ClientTime.Name = "ClientTime"
-ClientTime.Parent = Main
-ClientTime.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-ClientTime.BorderColor3 = Color3.fromRGB(27, 42, 53)
-ClientTime.BorderSizePixel = 0
-ClientTime.Position = UDim2.new(0.0500000007, 0, 0.495289803, 0)
-ClientTime.Size = UDim2.new(0, 85, 0, 51)
-
-ClientTimeStroke.Color = Color3.fromRGB(255, 255, 255)
-ClientTimeStroke.Name = "ClientTimeStroke"
-ClientTimeStroke.Parent = ClientTime
-
-ClientTimeCorner.Name = "ClientTimeCorner"
-ClientTimeCorner.Parent = ClientTime
-
-ClientTimeLabel_1.Name = "ClientTimeLabel_1"
-ClientTimeLabel_1.Parent = ClientTime
-ClientTimeLabel_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ClientTimeLabel_1.BackgroundTransparency = 1.000
-ClientTimeLabel_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ClientTimeLabel_1.BorderSizePixel = 0
-ClientTimeLabel_1.Position = UDim2.new(-0.0117647061, 0, -0.0143791651, 0)
-ClientTimeLabel_1.Size = UDim2.new(0, 85, 0, 27)
-ClientTimeLabel_1.Font = Enum.Font.ArialBold
-ClientTimeLabel_1.Text = "Client Time:"
-ClientTimeLabel_1.TextColor3 = Color3.fromRGB(255, 255, 255)
-ClientTimeLabel_1.TextSize = 13.000
-
-ClientTimeLabel_2.Name = "ClientTimeLabel_2"
-ClientTimeLabel_2.Parent = ClientTime
-ClientTimeLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ClientTimeLabel_2.BackgroundTransparency = 1.000
-ClientTimeLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ClientTimeLabel_2.BorderSizePixel = 0
-ClientTimeLabel_2.Position = UDim2.new(0.0117647061, 0, 0.444444448, 0)
-ClientTimeLabel_2.Size = UDim2.new(0, 84, 0, 25)
-ClientTimeLabel_2.Font = Enum.Font.ArialBold
-ClientTimeLabel_2.Text = "0M / 0S"
-ClientTimeLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-ClientTimeLabel_2.TextSize = 13.000
-
-SkipPlayer.Name = "SkipPlayer"
-SkipPlayer.Parent = Main
-SkipPlayer.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-SkipPlayer.BorderColor3 = Color3.fromRGB(27, 42, 53)
-SkipPlayer.BorderSizePixel = 0
-SkipPlayer.Position = UDim2.new(0.356666654, 0, 0.508333325, 0)
-SkipPlayer.Size = UDim2.new(0, 178, 0, 45)
-
-SkipPlayerStroke.Color = Color3.fromRGB(255, 255, 255)
-SkipPlayerStroke.Name = "SkipPlayerStroke"
-SkipPlayerStroke.Parent = SkipPlayer
-
-SkipPlayerCorner.Name = "SkipPlayerCorner"
-SkipPlayerCorner.Parent = SkipPlayer
-
-SkipPlayerButton.Name = "SkipPlayerButton"
-SkipPlayerButton.Parent = SkipPlayer
-SkipPlayerButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SkipPlayerButton.BackgroundTransparency = 1.000
-SkipPlayerButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SkipPlayerButton.BorderSizePixel = 0
-SkipPlayerButton.Position = UDim2.new(0, 0, -0.0666666701, 0)
-SkipPlayerButton.Size = UDim2.new(0, 178, 0, 51)
-SkipPlayerButton.Font = Enum.Font.ArialBold
-SkipPlayerButton.Text = "Skip Players"
-SkipPlayerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-SkipPlayerButton.TextSize = 18.000
-SkipPlayerButton.MouseButton1Click:Connect(
-    function()
-        NextPlayers = true
-        wait(0.5)
-        NextPlayers = false
-    end
-)
-
-TargetNameEarnedTimeElapsed.Name = "TargetName/Earned/TimeElapsed"
-TargetNameEarnedTimeElapsed.Parent = Main
-TargetNameEarnedTimeElapsed.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-TargetNameEarnedTimeElapsed.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TargetNameEarnedTimeElapsed.BorderSizePixel = 0
-TargetNameEarnedTimeElapsed.Position = UDim2.new(0.0533333346, 0, 0.753260851, 0)
-TargetNameEarnedTimeElapsed.Size = UDim2.new(0, 270, 0, 50)
-
-EarnedTimeElapsedStroke.Color = Color3.fromRGB(255, 255, 255)
-EarnedTimeElapsedStroke.Name = "Earned/TimeElapsedStroke"
-EarnedTimeElapsedStroke.Parent = TargetNameEarnedTimeElapsed
-
-EarnedTimeElapsedCorner.Name = "Earned/TimeElapsedCorner"
-EarnedTimeElapsedCorner.Parent = TargetNameEarnedTimeElapsed
-
-EarnedLabel.Name = "EarnedLabel"
-EarnedLabel.Parent = TargetNameEarnedTimeElapsed
-EarnedLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-EarnedLabel.BackgroundTransparency = 1.000
-EarnedLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-EarnedLabel.Position = UDim2.new(0.0459771045, 0, 0.319999993, 0)
-EarnedLabel.Size = UDim2.new(0, 79, 0, 17)
-EarnedLabel.Font = Enum.Font.ArialBold
-EarnedLabel.Text = "Earned : 0"
-EarnedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-EarnedLabel.TextSize = 15.000
-EarnedLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-TimeElapsedLabel.Name = "TimeElapsedLabel"
-TimeElapsedLabel.Parent = TargetNameEarnedTimeElapsed
-TimeElapsedLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-TimeElapsedLabel.BackgroundTransparency = 1.000
-TimeElapsedLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TimeElapsedLabel.Position = UDim2.new(0.0422734022, 0, 0.555555582, 0)
-TimeElapsedLabel.Size = UDim2.new(0, 246, 0, 25)
-TimeElapsedLabel.Font = Enum.Font.ArialBold
-TimeElapsedLabel.Text = "Time Elapsed: 0H 0M 0S"
-TimeElapsedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TimeElapsedLabel.TextSize = 15.000
-TimeElapsedLabel.TextXAlignment = Enum.TextXAlignment.Left
-function UpdateTime()
-    local GameTime = math.floor(workspace.DistributedGameTime + 0.5)
-    local Hour = math.floor(GameTime / (60 ^ 2)) % 24
-    local Minute = math.floor(GameTime / (60 ^ 1)) % 60
-    local Second = math.floor(GameTime / (60 ^ 0)) % 60
-    TimeElapsedLabel.Text = "Time Elapsed: " .. Hour .. "H " .. Minute .. "M " .. Second .. "S"
-end
-
-spawn(
-    function()
-        while task.wait() do
-            pcall(
-                function()
-                    UpdateTime()
+-- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
+function Hop()
+    local PlaceID = game.PlaceId
+    local AllIDs = {}
+    local foundAnything = ""
+    local actualHour = os.date("!*t").hour
+    local Deleted = false
+    function TPReturner()
+        local Site;
+        if foundAnything == "" then
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+        else
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+        end
+        local ID = ""
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        end
+        local num = 0;
+        for i,v in pairs(Site.data) do
+            local Possible = true
+            ID = tostring(v.id)
+            if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                for _,Existing in pairs(AllIDs) do
+                    if num ~= 0 then
+                        if ID == tostring(Existing) then
+                            Possible = false
+                        end
+                    else
+                        if tonumber(actualHour) ~= tonumber(Existing) then
+                            local delFile = pcall(function()
+                                AllIDs = {}
+                                table.insert(AllIDs, actualHour)
+                            end)
+                        end
+                    end
+                    num = num + 1
                 end
-            )
+                if Possible == true then
+                    table.insert(AllIDs, ID)
+                    wait()
+                    pcall(function()
+                        wait()
+                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    end)
+                    wait(4)
+                end
+            end
         end
     end
-)
-TargetNameLabel.Name = "TargetNameLabel"
-TargetNameLabel.Parent = TargetNameEarnedTimeElapsed
-TargetNameLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-TargetNameLabel.BackgroundTransparency = 1.000
-TargetNameLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TargetNameLabel.Position = UDim2.new(0.0422734022, 0, 0, 0)
-TargetNameLabel.Size = UDim2.new(0, 258, 0, 18)
-TargetNameLabel.Font = Enum.Font.ArialBold
-TargetNameLabel.Text = "Target Name : "
-TargetNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TargetNameLabel.TextSize = 15.000
-TargetNameLabel.TextXAlignment = Enum.TextXAlignment.Left
+    function Teleport() 
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+    Teleport()
+end       
+-- Instances:
 
-MainSection.Name = "MainSection"
-MainSection.Parent = Main
-MainSection.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-MainSection.BorderColor3 = Color3.fromRGB(27, 42, 53)
-MainSection.BorderSizePixel = 0
-MainSection.Position = UDim2.new(0.376666665, 0, 0.0399999991, 0)
-MainSection.Size = UDim2.new(0, 172, 0, 87)
+local Converted = {
+	["_ScreenGui"] = Instance.new("ScreenGui");
+	["_Ui"] = Instance.new("Frame");
+	["_UICorner"] = Instance.new("UICorner");
+	["_shadowHolder"] = Instance.new("Frame");
+	["_umbraShadow"] = Instance.new("ImageLabel");
+	["_penumbraShadow"] = Instance.new("ImageLabel");
+	["_ambientShadow"] = Instance.new("ImageLabel");
+	["_Frame"] = Instance.new("Frame");
+	["_UICorner1"] = Instance.new("UICorner");
+	["_Night Hub"] = Instance.new("TextLabel");
+	["_UICorner2"] = Instance.new("UICorner");
+	["_Frame1"] = Instance.new("Frame");
+	["_Frame2"] = Instance.new("Frame");
+	["_UICorner3"] = Instance.new("UICorner");
+	["_ImageLabel"] = Instance.new("ImageLabel");
+	["_Time :"] = Instance.new("TextLabel");
+	["_You Bounty"] = Instance.new("TextLabel");
+	["_Target Name"] = Instance.new("TextLabel");
+	["_Frame3"] = Instance.new("Frame");
+	["_UICorner4"] = Instance.new("UICorner");
+	["_Next Ply"] = Instance.new("TextButton");
+	["_UICorner5"] = Instance.new("UICorner");
+	["_Earned Bounty :"] = Instance.new("TextLabel");
+	["_Frame4"] = Instance.new("Frame");
+	["_UICorner6"] = Instance.new("UICorner");
+	["_Next Ply1"] = Instance.new("TextButton");
+	["_UICorner7"] = Instance.new("UICorner");
+}
 
-MainSectionCorner.Name = "MainSectionCorner"
-MainSectionCorner.Parent = MainSection
+-- Properties:
 
-MainSectionStroke.Color = Color3.fromRGB(255, 255, 255)
-MainSectionStroke.Name = "MainSectionStroke"
-MainSectionStroke.Parent = MainSection
+Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
 
-MainSectionLabel_1.Name = "MainSectionLabel_1"
-MainSectionLabel_1.Parent = MainSection
-MainSectionLabel_1.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-MainSectionLabel_1.BackgroundTransparency = 1.000
-MainSectionLabel_1.BorderColor3 = Color3.fromRGB(27, 42, 53)
-MainSectionLabel_1.BorderSizePixel = 0
-MainSectionLabel_1.Position = UDim2.new(0.0813953504, 0, 0, 0)
-MainSectionLabel_1.Size = UDim2.new(0, 158, 0, 50)
-MainSectionLabel_1.Font = Enum.Font.Unknown
-MainSectionLabel_1.Text = "Night Hub"
-MainSectionLabel_1.TextColor3 = Color3.fromRGB(210, 210, 210)
-MainSectionLabel_1.TextSize = 25.000
-MainSectionLabel_1.TextWrapped = true
-MainSectionLabel_1.TextXAlignment = Enum.TextXAlignment.Left
+Converted["_Ui"].BackgroundColor3 = Color3.fromRGB(30.00000201165676, 30.00000201165676, 30.00000201165676)
+Converted["_Ui"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Ui"].BorderSizePixel = 0
+Converted["_Ui"].Position = UDim2.new(0.226519331, 0, 0.27510041, 0)
+Converted["_Ui"].Size = UDim2.new(0, 407, 0, 223)
+Converted["_Ui"].Name = "Ui"
+Converted["_Ui"].Parent = Converted["_ScreenGui"]
+Converted["_Ui"].Visible = true
+Converted["_Ui"].Active = true
+Converted["_Ui"].Draggable = true
 
-MainSectionLabel_2.Name = "MainSectionLabel_2"
-MainSectionLabel_2.Parent = MainSection
-MainSectionLabel_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-MainSectionLabel_2.BackgroundTransparency = 1.000
-MainSectionLabel_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-MainSectionLabel_2.BorderSizePixel = 0
-MainSectionLabel_2.Position = UDim2.new(0.0813953504, 0, 0.338205963, 0)
-MainSectionLabel_2.Size = UDim2.new(0, 158, 0, 50)
-MainSectionLabel_2.Font = Enum.Font.Unknown
-MainSectionLabel_2.Text = "Auto Bounty"
-MainSectionLabel_2.TextColor3 = Color3.fromRGB(64, 64, 64)
-MainSectionLabel_2.TextSize = 20.000
-MainSectionLabel_2.TextWrapped = true
-MainSectionLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+Converted["_UICorner"].Parent = Converted["_Ui"]
 
-MainStroke.Color = Color3.fromRGB(210, 210, 210)
-MainStroke.Name = "MainStroke"
-MainStroke.Parent = Main
+Converted["_shadowHolder"].BackgroundTransparency = 1
+Converted["_shadowHolder"].Size = UDim2.new(1, 0, 1, 0)
+Converted["_shadowHolder"].ZIndex = 0
+Converted["_shadowHolder"].Name = "shadowHolder"
+Converted["_shadowHolder"].Parent = Converted["_Ui"]
+
+Converted["_umbraShadow"].Image = "rbxassetid://1316045217"
+Converted["_umbraShadow"].ImageColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_umbraShadow"].ImageTransparency = 0.8600000143051147
+Converted["_umbraShadow"].ScaleType = Enum.ScaleType.Slice
+Converted["_umbraShadow"].SliceCenter = Rect.new(10, 10, 118, 118)
+Converted["_umbraShadow"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["_umbraShadow"].BackgroundTransparency = 1
+Converted["_umbraShadow"].Position = UDim2.new(0.5, 0, 0.5, 6)
+Converted["_umbraShadow"].Size = UDim2.new(1, 10, 1, 10)
+Converted["_umbraShadow"].ZIndex = 0
+Converted["_umbraShadow"].Name = "umbraShadow"
+Converted["_umbraShadow"].Parent = Converted["_shadowHolder"]
+
+Converted["_penumbraShadow"].Image = "rbxassetid://1316045217"
+Converted["_penumbraShadow"].ImageColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_penumbraShadow"].ImageTransparency = 0.8799999952316284
+Converted["_penumbraShadow"].ScaleType = Enum.ScaleType.Slice
+Converted["_penumbraShadow"].SliceCenter = Rect.new(10, 10, 118, 118)
+Converted["_penumbraShadow"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["_penumbraShadow"].BackgroundTransparency = 1
+Converted["_penumbraShadow"].Position = UDim2.new(0.5, 0, 0.5, 6)
+Converted["_penumbraShadow"].Size = UDim2.new(1, 10, 1, 10)
+Converted["_penumbraShadow"].ZIndex = 0
+Converted["_penumbraShadow"].Name = "penumbraShadow"
+Converted["_penumbraShadow"].Parent = Converted["_shadowHolder"]
+
+Converted["_ambientShadow"].Image = "rbxassetid://1316045217"
+Converted["_ambientShadow"].ImageColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_ambientShadow"].ImageTransparency = 0.8799999952316284
+Converted["_ambientShadow"].ScaleType = Enum.ScaleType.Slice
+Converted["_ambientShadow"].SliceCenter = Rect.new(10, 10, 118, 118)
+Converted["_ambientShadow"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["_ambientShadow"].BackgroundTransparency = 1
+Converted["_ambientShadow"].Position = UDim2.new(0.5, 0, 0.5, 6)
+Converted["_ambientShadow"].Size = UDim2.new(1, 10, 1, 10)
+Converted["_ambientShadow"].ZIndex = 0
+Converted["_ambientShadow"].Name = "ambientShadow"
+Converted["_ambientShadow"].Parent = Converted["_shadowHolder"]
+
+Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame"].BorderSizePixel = 0
+Converted["_Frame"].Position = UDim2.new(-3.74908815e-08, 0, 0, 0)
+Converted["_Frame"].Size = UDim2.new(0, 407, 0, 40)
+Converted["_Frame"].Parent = Converted["_Ui"]
+
+Converted["_UICorner1"].Parent = Converted["_Frame"]
+
+Converted["_Night Hub"].Font = Enum.Font.SourceSansBold
+Converted["_Night Hub"].Text = "Night Hub Bounty Shit Hunt"
+Converted["_Night Hub"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Night Hub"].TextSize = 14
+Converted["_Night Hub"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Night Hub"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Night Hub"].BorderSizePixel = 0
+Converted["_Night Hub"].Position = UDim2.new(0.255528241, 0, 0.0250000004, 0)
+Converted["_Night Hub"].Size = UDim2.new(0, 198, 0, 40)
+Converted["_Night Hub"].Name = "Night Hub"
+Converted["_Night Hub"].Parent = Converted["_Frame"]
+
+Converted["_UICorner2"].Parent = Converted["_Night Hub"]
+
+Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame1"].BorderSizePixel = 0
+Converted["_Frame1"].Position = UDim2.new(-0, 1, 0.184, 0)
+Converted["_Frame1"].Size = UDim2.new(0, 407, 0, 1)
+Converted["_Frame1"].Parent = Converted["_Ui"]
+
+Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame2"].BorderSizePixel = 0
+Converted["_Frame2"].Position = UDim2.new(-3.74908815e-08, 0, 0.188340813, 0)
+Converted["_Frame2"].Size = UDim2.new(0, 407, 0, 181)
+Converted["_Frame2"].Parent = Converted["_Ui"]
+
+Converted["_UICorner3"].Parent = Converted["_Frame2"]
+
+Converted["_ImageLabel"].Image = "rbxassetid://15150981742"
+Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ImageLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_ImageLabel"].BorderSizePixel = 0
+Converted["_ImageLabel"].Position = UDim2.new(0.00982800964, 0, 0.104972377, 0)
+Converted["_ImageLabel"].Size = UDim2.new(0, 100, 0, 100)
+Converted["_ImageLabel"].Parent = Converted["_Frame2"]
+
+Converted["_Time :"].Font = Enum.Font.SourceSansBold
+Converted["_Time :"].Text = "Time :"
+Converted["_Time :"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Time :"].TextSize = 14
+Converted["_Time :"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Time :"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Time :"].BorderSizePixel = 0
+Converted["_Time :"].Position = UDim2.new(0.292383283, 0, 0, 0)
+Converted["_Time :"].Size = UDim2.new(0, 264, 0, 32)
+Converted["_Time :"].Name = "Time :"
+Converted["_Time :"].Parent = Converted["_Frame2"]
+function UpdateTime()
+    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+    local Hour = math.floor(GameTime/(60^2))%24
+    local Minute = math.floor(GameTime/(60^1))%60
+    local Second = math.floor(GameTime/(60^0))%60
+    Converted["_Time :"].Text = "Hours : "..Hour.." Minute : "..Minute.." Second : "..Second
+    end
+    spawn(function()
+    while task.wait() do
+    pcall(function()
+    UpdateTime()
+    end)
+    end
+    end)
+
+Converted["_You Bounty"].Font = Enum.Font.SourceSansBold
+Converted["_You Bounty"].Text = "You Bounty :"
+Converted["_You Bounty"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_You Bounty"].TextSize = 14
+Converted["_You Bounty"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_You Bounty"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_You Bounty"].BorderSizePixel = 0
+Converted["_You Bounty"].Position = UDim2.new(0.292383283, 0, 0.314917117, 0)
+Converted["_You Bounty"].Size = UDim2.new(0, 264, 0, 32)
+Converted["_You Bounty"].Name = "You Bounty"
+Converted["_You Bounty"].Parent = Converted["_Frame2"]
+spawn(function()
+    while wait() do
+        pcall(function()
+            Converted["_You Bounty"].Text = "Your Bounty :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value
+        end)
+    end
+end)
+
+Converted["_Target Name"].Font = Enum.Font.SourceSansBold
+Converted["_Target Name"].Text = "Target Name :"
+Converted["_Target Name"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Target Name"].TextSize = 14
+Converted["_Target Name"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Target Name"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Target Name"].BorderSizePixel = 0
+Converted["_Target Name"].Position = UDim2.new(0.292383283, 0, 0.491712719, 0)
+Converted["_Target Name"].Size = UDim2.new(0, 264, 0, 32)
+Converted["_Target Name"].Name = "Target Name"
+Converted["_Target Name"].Parent = Converted["_Frame2"]
+
+Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(15.00000100582838, 15.00000100582838, 15.00000100582838)
+Converted["_Frame3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame3"].BorderSizePixel = 0
+Converted["_Frame3"].Position = UDim2.new(0.0368550383, 0, 0.712707162, 0)
+Converted["_Frame3"].Size = UDim2.new(0, 123, 0, 46)
+Converted["_Frame3"].Parent = Converted["_Frame2"]
+
+Converted["_UICorner4"].Parent = Converted["_Frame3"]
+
+Converted["_Next Ply"].Font = Enum.Font.SourceSansBold
+Converted["_Next Ply"].Text = "Next Players"
+Converted["_Next Ply"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Next Ply"].TextSize = 14
+Converted["_Next Ply"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Next Ply"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Next Ply"].BorderSizePixel = 0
+Converted["_Next Ply"].Position = UDim2.new(0.046683047, 0, 0.740331471, 0)
+Converted["_Next Ply"].Size = UDim2.new(0, 116, 0, 37)
+Converted["_Next Ply"].Name = "Next Ply"
+Converted["_Next Ply"].Parent = Converted["_Frame2"]
+Converted["_Next Ply"].MouseButton1Down:Connect(function()
+    NextplySelect = true
+    wait(.2)
+    NextplySelect = false
+end)
+
+Converted["_UICorner5"].Parent = Converted["_Next Ply"]
+
+Converted["_Earned Bounty :"].Font = Enum.Font.SourceSansBold
+Converted["_Earned Bounty :"].Text = "Earned Bounty :"
+Converted["_Earned Bounty :"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Earned Bounty :"].TextSize = 14
+Converted["_Earned Bounty :"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Earned Bounty :"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Earned Bounty :"].BorderSizePixel = 0
+Converted["_Earned Bounty :"].Position = UDim2.new(0.291999996, 0, 0.138359115, 0)
+Converted["_Earned Bounty :"].Size = UDim2.new(0, 264, 0, 32)
+Converted["_Earned Bounty :"].Name = "Earned Bounty :"
+Converted["_Earned Bounty :"].Parent = Converted["_Frame2"]
+
+Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(15.00000100582838, 15.00000100582838, 15.00000100582838)
+Converted["_Frame4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame4"].BorderSizePixel = 0
+Converted["_Frame4"].Position = UDim2.new(0.400491387, 0, 0.712707162, 0)
+Converted["_Frame4"].Size = UDim2.new(0, 123, 0, 46)
+Converted["_Frame4"].Parent = Converted["_Frame2"]
+
+Converted["_UICorner6"].Parent = Converted["_Frame4"]
+
+Converted["_Next Ply1"].Font = Enum.Font.SourceSansBold
+Converted["_Next Ply1"].Text = "Hop Server"
+Converted["_Next Ply1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Next Ply1"].TextSize = 14
+Converted["_Next Ply1"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Next Ply1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Next Ply1"].BorderSizePixel = 0
+Converted["_Next Ply1"].Position = UDim2.new(0.0222927183, 0, 0.0881573185, 0)
+Converted["_Next Ply1"].Size = UDim2.new(0, 116, 0, 37)
+Converted["_Next Ply1"].Name = "Next Ply"
+Converted["_Next Ply1"].Parent = Converted["_Frame4"]
+Converted["_Next Ply1"].MouseButton1Down:Connect(function()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+    Hop()
+end)
+
+Converted["_UICorner7"].Parent = Converted["_Next Ply1"]
+
+
+
+-- Scripts:
 
 ---Source Tween bên Night Hub tui Copy vô-----
 
@@ -589,46 +553,6 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     wait(1)
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
-
-spawn(function()
-    while wait() do
-    if _G.AutoBounty then
-        if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso")
-            end
-        end
-    end
-end)
-
-spawn(function()
-    while true do
-    if _G.AutoBounty then
-    for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
-        if v.Name ~= game.Players.LocalPlayer.Name then
-            if v.Humanoid.Health > 0 and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude <= 7000 then
-                plyselecthunthelpold = v.Humanoid.Health
-                repeat task.wait()
-                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                    v.Humanoid.CanCollide = false
-                    NameTarget = v.Name
-                    useskill = true
-                    workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, v.HumanoidRootPart.Position + workspace.CurrentCamera.CFrame.Position)
-                    if game.Players.LocalPlayer.Character.Humanoid.Health > 3000 then
-                        topos(v.HumanoidRootPart.CFrame * CFrame.new(2, 12, 2))
-                    elseif game.Players.LocalPlayer.Character.Humanoid.Health < 3000 then
-                        topos(v.HumanoidRootPart.CFrame * CFrame.new(2, 80, 2))
-                    end
-                TargetSelectHunt = v.Humanoid
-                until _G.AutoBounty == false or v.Humanoid.Health <= 0 or not v.Parent or not v:FindFirstChild("HumanoidRootPart") or not v:FindFirstChild("Humanoid") or not v.Parent or NextplySelect == true
-                useskill = false
-                NextplySelect = true
-                StartCheckTarget = false
-                    end
-                end
-            end
-        end
-    end
 end)
 
 function NameMelee()
@@ -966,82 +890,218 @@ function checkskillGun()
         end
     end
 end
-
-    function autoskill()
-        EnableBuso()
-        sword = checkskillSword()
-        meele = checkskillMelee()
-        df = checkskillDF()
-        gun = checkskillGun()
-        if
-            df and DF and not string.find(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value, "Portal") and
-                df ~= "F"
-         then
-            EquipWeaponName(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
-            local condimebeo = checkskillDF()
-            if condimebeo then
-                SkillZMelee2 = true
-                SkillXMelee2 = true
-                SkillCMelee2 = true
-            end
-        elseif checkskillMelee() and Melee then
-            EquipWeaponName(NameMelee())
-            local condimebeo = checkskillMelee()
-            if condimebeo then
-                SkillZSword2 = true
-                SkillXSword2 = true
-            end
-        elseif checkskillSword() and Sword then
-            EquipWeaponName(NameSword())
-            local condimebeo = checkskillSword()
-            if condimebeo then
-                SkillZGun2 = true
-                SkillXGun2 = true
-            end
-        elseif checkskillGun() and Gun then
-            EquipWeaponName(NameGun())
-            if condimebeo then
-                SkillZDF2 = true
-                SkillXDF2 = true
-                SkillCDF2 = true
-                SkillVDF2 = true
-            end
-        else
-            EquipAllWeapon()
+function SendKey(c9, ca)
+    if c9 then
+        if not ca then
+            game:service("VirtualInputManager"):SendKeyEvent(true, c9, false, game)
+            task.wait()
+            game:service("VirtualInputManager"):SendKeyEvent(false, c9, false, game)
+        elseif ca then
+            game:service("VirtualInputManager"):SendKeyEvent(true, c9, false, game)
+            task.wait(ca)
+            game:service("VirtualInputManager"):SendKeyEvent(false, c9, false, game)
         end
     end
+end
 
+function Y()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+end
+
+function Z()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+end
+
+function X()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+end
+
+function C()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+end
+
+function V()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
+    end
+
+function autoskill()
+    EnableBuso()
+    sword = checkskillSword()
+    meele = checkskillMelee()
+    df = checkskillDF()
+    gun = checkskillGun()
+    if
+        df and DF and not string.find(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value, "Portal") and
+            df ~= "F"
+     then
+        EquipWeaponName(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+        local condimebeo = checkskillDF()
+        if condimebeo then
+            Z()
+            Z()
+            Z()
+            Z()
+            Z()
+            X()
+            X()
+            X()
+            X()
+            X()
+            C()
+            C()
+            C()
+            C()
+            C()
+            V()
+            V()
+            V()
+            V()
+            V()
+            V()
+        end
+    elseif checkskillMelee() and Melee then
+        EquipWeaponName(NameMelee())
+        local condimebeo = checkskillMelee()
+        if condimebeo then
+            Z()
+            Z()
+            Z()
+            Z()
+            Z()
+            X()
+            X()
+            X()
+            X()
+            X()
+            C()
+            C()
+            C()
+            C()
+            C()
+        end
+    elseif checkskillSword() and Sword then
+        EquipWeaponName(NameSword())
+        local condimebeo = checkskillSword()
+        if condimebeo then
+            Z()
+            Z()
+            Z()
+            Z()
+            Z()
+            X()
+            X()
+            X()
+            X()
+            X()
+        end
+    elseif checkskillGun() and Gun then
+        EquipWeaponName(NameGun())
+        if condimebeo then
+            Z()
+            Z()
+            Z()
+            Z()
+            Z()
+            X()
+            X()
+            X()
+            X()
+            X()
+        end
+    else
+        EquipAllWeapon()
+    end
+end
+
+_G.AutoFarmBounty = true
+
+    spawn(function()
+        while wait() do
+            if _G.AutoFarmBounty then
+                for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+                    if not v.Humanoid.Health == 0 or not v:FindFirstChild("HumanoidRootPart") or not v:FindFirstChild("Humanoid") or not v.Parent then
+                        NextplySelect = true
+                        wait(.2)
+                    end
+                end
+            end
+        end
+    end)
+
+   
 spawn(function()
-    while wait() do
-    if _G.AutoBounty then
-        if Distance < 100 then
-            autoskill()
+while wait() do
+    if _G.AutoFarmBounty then
+    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notifications:GetChildren()) do
+        if v.Name == "NotificationTemplate" then
+            if string.find(v.Text,"attack") or string.find(v.Text,"players") or string.find(v.Text,"Players") or string.find(v.Text,"Safe Zone!") then
+                NextplySelect = true
+                wait(0.0000000000000000000000000000000001)
+                NextplySelect = false
+                OrionLib:MakeNotification({
+                    Name = "System",
+                    Content = "Players Die or not Enabled PVP",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+                    end
+                end
             end
         end
     end
 end)
 
+
+local Catsle = CFrame.new(-5071.82324, 314.858734, -3150.69922)
+local Mainsion = CFrame.new(-12471.169921875, 374.94024658203, -7551.677734375)
 spawn(function()
-    pcall(function()
     while wait() do
-    if _G.AutoBounty then
-    if TargetSelectHunt ~= nil then
-    if StartCheckTarget then
-    wait(.1)
-    if TargetSelectHunt.Health == TargetSelectHunt.MaxHealth or TargetSelectHunt.Health >= plyselecthunthelpold then
-    NextplySelect = true
-    TargetSelectHunt = nil
+    pcall(function()
+    if _G.AutoFarmBounty then
+    for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+    if v.Name ~= game.Players.LocalPlayer.Name then
+    if v:WaitForChild("Humanoid").Health > 0 and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude <= 10000 then
+    plyselecthunthelpold = v.Humanoid.Health
+    repeat task.wait()
+    NameTarget = v.Name
+    Converted["_Target Name"].Text = "Target Name : "..v.Name..""
+    if tostring(game.Players.LocalPlayer.Team) == "Pirates" then
+    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,4,2))
+    elseif tostring(game.Players.LocalPlayer.Team) == "Marines" then
+    if game.Players[NameTarget].Team ~= game.Players.LocalPlayer.Team then
+    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,4,2))
     end
     end
-    end
-    end
-    end
+spawn(function()
+if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
+    spawn(function()
+    autoskill()
+    Click()
+    Aimbot = true
     end)
-    end)
+end
+end)
+v.HumanoidRootPart.CanCollide = false
+TargetSelectHunt = v.Humanoid
+until _G.AutoFarmBounty == false or v.Humanoid.Health == 0 or not v:FindFirstChild("HumanoidRootPart") or not v:FindFirstChild("Humanoid") or not v.Parent or NextplySelect == true
+NextplySelect = false
+StartCheckTarget = false
+end
+end
+end
+end
+end)
+end
+end)
 
 spawn(function()
     pcall(function()
-    if _G.AutoBounty then
+    if _G.AutoFarmBounty then
     while wait() do
     if game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
@@ -1052,51 +1112,55 @@ spawn(function()
     end)
 
 spawn(function()
+    while wait() do
+    pcall(function()
+    if _G.AutoFarmBounty then
+    if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+    end
+    end
+    end)
+    end
+    end)
+
+spawn(function()
+    while wait() do
         pcall(function()
-                while wait(0.1) do
-                    local BountyB = game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value
-                    Converted["_TextLabel"].Text = "Earned: " .. BountyB - BountyA
-                end
-            end)
+            if Ken then
+                repeat task.wait()
+                    if not game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
+                        game:GetService('VirtualUser'):CaptureController()
+                        game:GetService('VirtualUser'):SetKeyDown('0x65')
+                        wait(2)
+                        game:GetService('VirtualUser'):SetKeyUp('0x65')
+                    end
+                until game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") or not ken
+            end
         end)
+    end
+end)
 
+spawn(function()
+pcall(function()
+while wait(.1) do
+if _G.AutoFarmBounty then
+if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EnablePvp")
+end
+end
+end
+end)
+end)
 
-
-        spawn(function() 
-            repeat
-                task.wait()
-            until game:IsLoaded()
-            repeat
-                task.wait()
-            until game.Players
-            repeat
-                task.wait()
-            until game.Players.LocalPlayer and game.Players.LocalPlayer.Team ~= nil 
-            wait(1.5)
-            require(game.ReplicatedStorage.Notification).new("<Color=Red>!Thanks For Use!<Color=/>"):Display()
-            wait(1.7)
-            require(game.ReplicatedStorage.Notification).new("<Color=Red>Auto Bounty Hunt there is version BETA<Color=/>"):Display()
-            wait(1.9)
-            require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Please use Fluxus Client<Color=/>"):Display()
-            wait(1.10)
-            require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Join Discord to get new noitification update<Color=/>"):Display()
-            wait(1.12)
-            require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Channel : LMNGAMING <Color=/>"):Display()
-            wait(.36)
+spawn(function()
+    pcall(function()
+        game:GetService("RunService").RenderStepped:connect(function()
+            if Aimbot and TargetPlayerAim ~= nil and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name]:FindFirstChild("MousePos") then
+                local args = {
+                    [1] = game:GetService("Players"):FindFirstChild(TargetPlayerAim).Character.HumanoidRootPart.Position
+                }
+                game:GetService("Players").LocalPlayer.Character[game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
+            end
         end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    end)
+end)
