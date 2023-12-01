@@ -1,6 +1,3 @@
-if game.Players.LocalPlayer.Name == "dezzypooh0898l" or "NightUmd5"then
-
-
     function Hop()
         local PlaceID = game.PlaceId
         local AllIDs = {}
@@ -1900,7 +1897,7 @@ if game.Players.LocalPlayer.Name == "dezzypooh0898l" or "NightUmd5"then
     end)
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Night Hub Test", HidePremium = false,IntroText = "LMN GAMING", SaveConfig = true, ConfigFolder = "Night Test"})
+local Window = OrionLib:MakeWindow({Name = "Night Hub Test", HidePremium = false, IntroText = "LMN GAMING", SaveConfig = true, ConfigFolder = "Night Test"})
 
 local S = Window:MakeTab({
 	Name = "Sea Event",
@@ -2096,27 +2093,24 @@ S:AddToggle({
 
 spawn(function()
     while wait() do
-    if _G.AutoShark then
-    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-        if v.Name == "Shark" then
-            if game:GetService("Workspace").Enemies:FindFirstChild("Shark") then
-                repeat task.wait()
-                    EquipWeapon(_G.SelectWeapon)
-                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                    v.HumanoidRootPart.CanCollide = false
-                    v.Humanoid.WalkSpeed = 0
-                    v.Head.CanCollide = false
-                    topos(v.HumanoidRootPart.CFrame * CFrame.new(2, 40, 2)))
-                    game:GetService'VirtualUser':CaptureController()
-                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672)
-                until _G.AutoShark == false or v.Humanoid.Health <= 0 or not v.Parent
+        if _G.AutoShark then
+            pcall(function()
+                if game:GetService("ReplicatedStorage"):FindFirstChild("Shark") or game:GetService("Workspace").Enemies:FindFirstChild("Shark") then
+                    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        if _G.AutoShark and v.Name == "Shark" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                            repeat task.wait()
+                                AutoHaki()
+                                EquipWeapon(_G.SelectWeapon)
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                game:GetService'VirtualUser':CaptureController()
+                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                            until not _G.AutoShark or v.Humanoid.Health <= 0 or not v.Parent
+                        end
                     end
-                end
-            end
+                end 
+            end)
         end
     end
 end)
-
-else
-    game:GetService("Players").LocalPlayer:Kick("Mày là thằng nào cút mẹ mày đi!!!")
-end
