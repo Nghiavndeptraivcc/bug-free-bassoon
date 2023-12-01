@@ -2115,6 +2115,38 @@ spawn(function()
     end
 end)
 
+S:AddToggle({
+	Name = "Auto Shark",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoShark = Value
+        StopTween(_G.AutoShark)
+	end    
+})
+
+spawn(function()
+    while wait() do
+        if _G.AutoShark then
+            pcall(function()
+                if game:GetService("ReplicatedStorage"):FindFirstChild("Terrorshark") or game:GetService("Workspace").Enemies:FindFirstChild("Terrorshark") then
+                    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        if _G.AutoShark and v.Name == "Terrorshark" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                            repeat task.wait()
+                                AutoHaki()
+                                EquipWeapon(_G.SelectWeapon)
+                                v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                game:GetService'VirtualUser':CaptureController()
+                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                            until not _G.AutoShark or v.Humanoid.Health <= 0 or not v.Parent
+                        end
+                    end
+                end 
+            end)
+        end
+    end
+end)
+
 S:AddButton({
 	Name = "Mua Thuyen",
 	Callback = function()
