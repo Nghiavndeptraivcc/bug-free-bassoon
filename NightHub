@@ -1896,6 +1896,30 @@
         wait(.36)
     end)
 
+    function SPBoat()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("BuyBoat", boat)
+        for i, v in pairs(workspace.Boats:GetChildren()) do
+            if v:FindFirstChild("Owner") then
+                if v:FindFirstChild("Owner").Value == plr then
+                    table.foreach(v:GetDescendants(), function(a, child)
+                        if child:IsA("BasePart") or child:IsA("MeshPart") or child:IsA("Part") then
+                            child.CanCollide = false
+                        end
+                    end)
+                    v:FindFirstChild("Humanoid"):GetPropertyChangedSignal("Value"):Connect(function(g)
+                        if g == 0 then
+                            SPBoat()
+                        end
+                    end)
+                    repeat wait()
+                        plr.Character:SetPrimaryPartCFrame(v:FindFirstChild("VehicleSeat").CFrame * CFrame.new(0, 2, 0))
+                    until plr.Character:FindFirstChildOfClass("Humanoid").Sit == true
+                    v:FindFirstChild("VehicleSeat").MaxSpeed = _G.SpeedMode
+                end
+            end
+        end
+    end
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Night Hub Test", HidePremium = false, IntroText = "LMN GAMING", SaveConfig = true, ConfigFolder = "Night Test"})
 
@@ -2354,4 +2378,21 @@ spawn(function()
         end)
     end
 end)
+
+S:AddDropdown({
+	Name = "Speed Mode",
+	Default = "Fast",
+	Options = {"110", "200", "300", "400"},
+	Callback = function(Value)
+		_G.SpeedMode = Value
+	end    
+})
+
+S:AddToggle({
+	Name = "Enabled Speed Boats",
+	Default = false,
+	Callback = function(Value)
+		    SPBoat()
+	end    
+})
 
