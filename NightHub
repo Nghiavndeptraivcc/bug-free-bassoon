@@ -2149,7 +2149,7 @@ spawn(function()
             if _G.BjirFrozenCuy then
                 local teleportLocation = game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension')
                 if teleportLocation then
-                    HyperCahaya(teleportLocation)
+                    topos(teleportLocation)
                 end
             end
         end)
