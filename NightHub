@@ -2160,7 +2160,7 @@ S:AddToggle({
 	Name = "Sail to Rough Sea",
 	Default = false,
 	Callback = function(Value)
-		if state then
+		if Value then
             _G.BiirTrax = true
         else
             _G.BiirTrax = false
