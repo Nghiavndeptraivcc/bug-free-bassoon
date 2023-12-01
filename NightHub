@@ -1915,7 +1915,7 @@
                     repeat wait()
                         plr.Character:SetPrimaryPartCFrame(v:FindFirstChild("VehicleSeat").CFrame * CFrame.new(0, 2, 0))
                     until plr.Character:FindFirstChildOfClass("Humanoid").Sit == true
-                    v:FindFirstChild("VehicleSeat").MaxSpeed = _G.SpeedMode
+                    v:FindFirstChild("VehicleSeat").MaxSpeed = _G.SpeedValue
                 end
             end
         end
@@ -2388,6 +2388,22 @@ S:AddDropdown({
 		_G.SpeedMode = Value
 	end    
 })
+
+if _G.SpeedMode == "110" then
+    _G.SpeedValue = 110
+end
+elseif _G.SpeedMoode == "200" then
+    _G.SpeedValue = 200
+end
+elseif _G.SpeedMoode == "300" then
+    _G.SpeedValue = 300
+end
+elseif _G.SpeedMoode == "400" then
+    _G.SpeedValue = 400
+end
+elseif _G.SpeedMoode == "500" then
+    _G.SpeedValue = 500
+end
 
 S:AddToggle({
 	Name = "Enabled Speed Boats",
