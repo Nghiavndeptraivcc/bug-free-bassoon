@@ -1920,7 +1920,7 @@ local Section = S:AddSection({
     Name = "Select Weapon"
 })
 
-M:AddParagraph("Select Weapon","Please Select Weapon")
+S:AddParagraph("Select Weapon","Please Select Weapon")
 
 local WeaponList = {"Melee","Sword","Fruit","Gun"}
 _G.SelectWeapon = "Melee"
