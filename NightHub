@@ -2114,3 +2114,22 @@ spawn(function()
         end
     end
 end)
+
+S:AddButton({
+	Name = "Mua Thuyen",
+	Callback = function()
+        local args = {
+            [1] = "BuyBoat",
+            [2] = "PirateBrigade"
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  	end    
+})
+
+S:AddButton({
+	Name = "BPTP to Tiki",
+	Callback = function()
+        BTP(CFrame.new(-16101.1885, 12.8422165, 380.942291, 0.194113985, 1.39194061e-08, -0.980978966, -9.82904691e-09, 1, 1.22443504e-08, 0.980978966, 7.26528837e-09, 0.194113985))
+  	end    
+})
