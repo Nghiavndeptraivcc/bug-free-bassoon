@@ -1896,8 +1896,9 @@
         wait(.36)
     end)
 
+    local plr = game.Players.LocalPlayer
+
     function SPBoat()
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("BuyBoat", boat)
         for i, v in pairs(workspace.Boats:GetChildren()) do
             if v:FindFirstChild("Owner") then
                 if v:FindFirstChild("Owner").Value == plr then
