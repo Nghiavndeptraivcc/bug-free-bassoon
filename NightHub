@@ -250,6 +250,8 @@ end
 
 ----// Tự Viết ;3 \\-----
 
+_G.Hunt = true
+
 spawn(function()
     while wait() do
         if _G.Hunt then
