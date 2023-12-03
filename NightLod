@@ -2022,8 +2022,6 @@ local Section = G:AddSection({
 G:AddToggle({
 	Name = "Auto Buso",
 	Default = false,
-    Flag = "Buso",
-    Save = false,
 	Callback = function(Value)
 		_G.AutoHaki = Value
 	end    
@@ -2042,8 +2040,6 @@ G:AddToggle({
 G:AddToggle({
     Name = "Bring Mob",
     Default = true,
-    Flag = "Bring Mobs",
-    Save = false,
     Callback = function(Value)
         _G.BringMonster = Value
     end    
@@ -2078,8 +2074,6 @@ end)
 G:AddToggle({
     Name = "Fast Attack",
     Default = true,
-    Flag = "FastAttack",
-    Save = false,
     Callback = function(Value)
         _G.FastAttack = Value
     end    
