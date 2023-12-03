@@ -2054,7 +2054,6 @@ G:AddDropdown({
     Name = "Bring Distance",
     Default = "Normal",
     Options = Bring,
-    Default = false,
     Flag = "Bring Mode",
     Save = true,
     Callback = function(Value)
